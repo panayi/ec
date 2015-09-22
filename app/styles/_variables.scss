@@ -1,0 +1,328 @@
+// Global Values
+// -------------------------
+$minWidth: 2050px;
+$minHeight: 500px;
+$basePadding: 1.5rem;
+
+
+// New Design Colors (Nov 2014)
+// -------------------------
+$gray:                  #808385;
+$mirage:                #393F46;
+$shuttle:               #61666C;
+$trout:                 #4C5056;
+$chateau:               #9FA1A4;
+$graySuit:              #8F9296;
+$shadyLady:             #9B9EA1;
+$darkJungle:            #191919;
+$magnesium:             #B3B3B3;
+$lilac:                 #E6E6E6;
+$alto:                  #DEDEDE;
+$zircon:                #E1E1E1;
+$snow:                  #FBFBFB;
+$yellowGreen:           #7EDB19;
+$havelockBlue:          #4A90E2;
+$alertRed:              #FF2020;
+
+
+// Grays
+// -------------------------
+$black:                 #1D2023;
+$grayDarker:            #404345;
+$grayDark:              #3C4249;
+$grayLight:             #B6B8BB;
+$grayLighter:           #ccc;
+$palegrey:    #f9f9f9;
+$white:                 #fff;
+
+
+// Accent colors
+// -------------------------
+$blue:                  #EDF4FD;
+$blueDark:              #4A90E2;
+$green:                 #46a546;
+$red:                   #DA4453;
+$yellow:                #ffc40d;
+$orange:                #f89406;
+$pink:                  #c3325f;
+$purple:                #7a43b6;
+$yellowLight:           #FEFDF0;
+
+
+// Borders
+// -------------------------
+$mainBorderColor: $lilac;
+$darkerBorderColor: $alto;
+$lighterBorderColor: $zircon;
+
+
+// Text
+// -------------------------
+$textColor:             $black;
+
+
+// Links
+// -------------------------
+$linkColor:             #4A90E2;
+$linkColorHover:        darken($linkColor, 15%);
+
+
+// Brand colors
+// -------------------------
+$facebookBlue: #3b5998;
+$twitterBlue: #4099FF;
+$pinterestRed: #C92228;
+
+// Typography
+// -------------------------
+$sansFontFamily:        "ff-tisa-sans-web-pro", sans-serif;
+$serifFontFamily:       "ff-tisa-web-pro", serif;
+
+$baseFontSize:          14px;
+$baseFontFamily:        $sansFontFamily;
+$baseLineHeight:        20px;
+$altFontFamily:         $serifFontFamily;
+
+$headingsFontFamily:    inherit;
+$headingsColor:         inherit;
+
+
+// Fonts
+// -------------------------
+@font-face {
+  font-family: 'vs';
+  src:url('fonts/vs.eot?-nk86al');
+  src:url('fonts/vs.eot?#iefix-nk86al') format('embedded-opentype'),
+    url('fonts/vs.woff?-nk86al') format('woff'),
+    url('fonts/vs.ttf?-nk86al') format('truetype'),
+    url('fonts/vs.svg?-nk86al#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'DINNextLTPro-Light';
+  src: url('font/din/2BA838_0_0.eot');
+  src: url('font/din/2BA838_0_0.eot?#iefix') format('embedded-opentype'),
+     url('font/din/2BA838_0_0.woff') format('woff'),
+     url('font/din/2BA838_0_0.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'DINNextLTPro-MediumCond';
+  src: url('webfonts/2BBA60_0_0.eot');
+  src: url('webfonts/2BBA60_0_0.eot?#iefix') format('embedded-opentype'),
+    url('font/din/2BBA60_0_0.woff') format('woff'),
+    url('font/din/2BBA60_0_0.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'DINNextLTPro-Bold';
+  src: url('font/din/2BA838_1_0.eot');
+  src: url('font/din/2BA838_1_0.eot?#iefix') format('embedded-opentype'),
+    url('font/din/2BA838_1_0.woff') format('woff'),
+    url('font/din/2BA838_1_0.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Roboto-Regular';
+  src:url('fonts/roboto/roboto_regular_macroman/Roboto-Regular-webfont.eot');
+  src:url('fonts/roboto/roboto_regular_macroman/Roboto-Regular-webfont.eot') format('embedded-opentype'),
+    url('fonts/roboto/roboto_regular_macroman/Roboto-Regular-webfont.woff') format('woff'),
+    url('fonts/roboto/roboto_regular_macroman/Roboto-Regular-webfont.ttf') format('truetype'),
+    url('fonts/roboto/roboto_regular_macroman/Roboto-Regular-webfont.svg') format('svg');
+}
+
+@font-face {
+  font-family: 'Roboto-Light';
+  src:url('fonts/roboto/roboto_light_macroman/Roboto-Light-webfont.eot');
+  src:url('fonts/roboto/roboto_light_macroman/Roboto-Light-webfont.eot') format('embedded-opentype'),
+    url('fonts/roboto/roboto_light_macroman/Roboto-Light-webfont.woff') format('woff'),
+    url('fonts/roboto/roboto_light_macroman/Roboto-Light-webfont.ttf') format('truetype'),
+    url('fonts/roboto/roboto_light_macroman/Roboto-Light-webfont.svg') format('svg');
+}
+
+@font-face {
+  font-family: 'Roboto-Medium';
+  src:url('fonts/roboto/roboto_medium_macroman/Roboto-Medium-webfont.eot');
+  src:url('fonts/roboto/roboto_medium_macroman/Roboto-Medium-webfont.eot') format('embedded-opentype'),
+    url('fonts/roboto/roboto_medium_macroman/Roboto-Medium-webfont.woff') format('woff'),
+    url('fonts/roboto/roboto_medium_macroman/Roboto-Medium-webfont.ttf') format('truetype'),
+    url('fonts/roboto/roboto_medium_macroman/Roboto-Medium-webfont.svg') format('svg');
+}
+
+// fonts
+  // = bold
+
+
+// headings
+
+$primaryHeadingFontFamily: "Roboto-Light",Helvetica,sans-serif;
+$primaryHeadingFontSize: 2.143rem;
+$primaryHeadingLineHeight: 2.857rem;
+
+@mixin primaryHeading {
+  font-family: $primaryHeadingFontFamily;
+  font-size: $primaryHeadingFontSize;
+  line-height: $primaryHeadingLineHeight;
+}
+
+$secondaryHeadingFontFamily: "Roboto-Medium",Helvetica,sans-serif;
+$secondaryHeadingFontSize: 1.571rem;
+$secondaryHeadingLineHeight: 2.143rem;
+
+@mixin secondaryHeading {
+  font-family: $secondaryHeadingFontFamily;
+  font-size: $secondaryHeadingFontSize;
+  line-height: $secondaryHeadingLineHeight;
+}
+
+$tertiaryHeadingFontFamily: "Roboto-Regular",Helvetica,sans-serif;
+$tertiaryHeadingFontSize: 1.143rem;
+$tertiaryHeadingLineHeight: 1.571rem;
+
+@mixin tertiaryHeading {
+  font-family: $tertiaryHeadingFontFamily;
+  font-size: $tertiaryHeadingFontSize;
+  line-height: $tertiaryHeadingLineHeight;
+}
+
+$smallHeadingFontFamily: "Roboto-Regular",Helvetica,sans-serif;
+$smallHeadingFontSize: 1rem;
+$smallHeadingLineHeight: 1rem;
+
+@mixin smallHeading {
+  font-family: $smallHeadingFontFamily;
+  font-size: $smallHeadingFontSize;
+  line-height: $smallHeadingLineHeight;
+}
+
+$smallHeadingBoldFontFamily: "Roboto-Medium",Helvetica,sans-serif;
+$smallHeadingBoldFontSize: 1.571rem;
+$smallHeadingBoldLineHeight: 1.143rem;
+
+@mixin smallHeadingBold {
+  font-family: $smallHeadingBoldFontFamily;
+  font-size: $smallHeadingBoldFontSize;
+  line-height: $smallHeadingBoldLineHeight;
+}
+
+$tinyHeadingFontFamily: "Roboto-Regular",Helvetica,sans-serif;
+$tinyHeadingFontSize: 0.929rem;
+$tinyHeadingLineHeight: 1.571rem;
+
+@mixin tinyHeading {
+  font-family: $tinyHeadingFontFamily;
+  font-size: $tinyHeadingFontSize;
+  line-height: $tinyHeadingLineHeight;
+}
+
+
+// content - standard used as default
+
+$standardContentFontFamily: "Roboto-Regular",Helvetica,sans-serif;
+$standardContentFontWeight: 400;
+
+$standardContentFontSize: 1.143rem;
+$standardContentLineHeight: 1.714rem;
+$standardContentParagraphHeight: 1.6rem;
+
+@mixin standardContent {
+  font-family: $standardContentFontFamily;
+  font-size: $standardContentFontSize;
+  line-height: $standardContentLineHeight;
+  font-weight: $standardContentFontWeight;
+}
+
+$largeContentFontSize: 1.429rem;
+$largeContentLineHeight: 2.429rem;
+$largeContentParagraphHeight: 2.0rem;
+
+@mixin largeContent {
+  font-family: $standardContentFontFamily;
+  font-size: $largeContentFontSize;
+  line-height: $largeContentLineHeight;
+  font-weight: $standardContentFontWeight;
+}
+
+$commentsContentFontSize: 0.929rem;
+$commentsContentLineHeight: 1.286rem;
+
+@mixin commentsContent {
+  font-family: $standardContentFontFamily;
+  font-size: $commentsContentFontSize;
+  line-height: $commentsContentLineHeight;
+  font-weight: $standardContentFontWeight;
+}
+
+$descriptionContentFontSize: 1rem;
+$descriptionContentLineHeight: 1rem;
+
+@mixin descriptionContent {
+  font-family: $standardContentFontFamily;
+  font-size: $descriptionContentFontSize;
+  line-height: $descriptionContentLineHeight;
+  font-weight: $standardContentFontWeight;
+}
+
+$boldContentFontFamily: "Roboto-Medium",Helvetica,sans-serif;
+
+@mixin boldContent {
+  font-family: $boldContentFontFamily;
+  font-size: $standardContentFontSize;
+  line-height: $standardContentLineHeight;
+  font-weight: $standardContentFontWeight;
+}
+
+// Component sizing
+// -------------------------
+// Based on 14px font-size and 20px line-height
+$fontSizeLarge:         $baseFontSize * 1; // ~18px
+$fontSizeSmall:         $baseFontSize * 1; // ~12px
+$fontSizeMini:          $baseFontSize * 1; // ~11px
+$mainMarginSize: 1.5rem;  // 15px
+$secondarMarginSize: 0.6rem; // 6px
+
+
+// Tables
+// -------------------------
+$tableBackground:                   transparent; // overall background-color
+$tableBackgroundAccent:             #f9f9f9; // for striping
+$tableBackgroundHover:              #f5f5f5; // for hover
+$tableBorder:                       #ddd; // table and cell border
+
+
+// Buttons
+// -------------------------
+$buttonFontColor: #999;
+
+
+// Forms
+// -------------------------
+
+
+// Dropdowns
+// -------------------------
+
+
+// Leftbar
+// -------------------------
+$leftbarWidth:                     300px;
+
+
+// Rightbar
+// -------------------------
+$rightbarWidth:                    350px;
+
+
+// Column
+// -------------------------
+$columnWidth:                      42rem;
+$minimizedColumnWidth:             4.2rem;
+
+
+// Popover
+// -------------------------
+$popoverBackground:       #fff;
+$popoverBackgroundColor: #f3f3f3;
+$popoverBorderColor: rgba(0, 0, 0, 0.35);

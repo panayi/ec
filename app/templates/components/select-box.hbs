@@ -1,0 +1,69 @@
+<div {{bind-attr class=":input isInvalid"}} {{action "clickedInputBox" on="mouseDown" bubbles=false}}>
+  {{#if controller.multiple}}
+    {{#each item in inserts}}
+      <div>
+        <span>{{item}}</span>
+        <a href="#" class="deselect" {{action "removeManualInsert" item on="mouseDown" bubbles=false}}>x</a>
+      </div>
+    {{/each}}
+    {{#each item in proxies.arrangedContent}}
+      {{#view controller=item isVisible=item.selected}}
+        <span>{{{item.label}}}</span>
+        <a href="#" class="deselect" {{action "deselect" on="mouseDown" target=item bubbles=false}}>x</a>
+      {{/view}}
+    {{/each}}
+  {{else}}
+    {{#if selectedProxy}}
+      <span>{{{selectedProxy.label}}}</span>
+      <a href="#" class="deselect deselect-single" {{action "deselect" target=selectedProxy on="mouseDown" bubbles=false}}>x</a>
+    {{/if}}
+  {{/if}}
+
+  {{input value=query
+      viewName="queryInput"
+      class="form-control"
+      placeholder=placeholder
+      autocomplete="off"
+      autocorrect="off"
+      autocapitalize="off"
+      spellcheck="false"}}
+</div>
+
+{{#view class="select-box-dropdown" isVisible=isOpened}}
+  <div class="dropdown-content">
+    {{#if controller.didFocusOnce}}
+      {{#each item in proxies}}
+        {{#view view.parentView.customSelectOptionView controller=item}}
+          <span class="label">{{{item.label}}}</span>
+        {{/view}}
+      {{/each}}
+    {{/if}}
+    {{#unless visibleProxies.length}}
+      <div class="empty"><span class="label">
+        {{#if controller.content.length}}
+          {{#if controller.allAreSelected}}
+            All options are selected
+          {{else}}
+            No results found
+          {{/if}}
+        {{else}}
+          Begin Typing to See Options
+        {{/if}}
+      </span></div>
+    {{/unless}}
+  </div>
+{{/view}}
+
+{{view "select"
+    viewName="dropdownInstance"
+    content=content
+    optionLabelPath=optionLabelPath
+    optionValuePath=optionValuePath
+    optionGroupPath=optionGroupPath
+    selection=selection
+    value=value
+    prompt=prompt
+    multiple=multiple
+    disabled=disabled
+    isVisible=false
+    optionView=nativeSelectionOptionView}}
