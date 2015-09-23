@@ -245,16 +245,6 @@ $largeContentParagraphHeight: 2.0rem;
   font-weight: $standardContentFontWeight;
 }
 
-$commentsContentFontSize: 0.929rem;
-$commentsContentLineHeight: 1.286rem;
-
-@mixin commentsContent {
-  font-family: $standardContentFontFamily;
-  font-size: $commentsContentFontSize;
-  line-height: $commentsContentLineHeight;
-  font-weight: $standardContentFontWeight;
-}
-
 $descriptionContentFontSize: 1rem;
 $descriptionContentLineHeight: 1rem;
 

@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+    <div class="twelve columns">
+      <h4>Features</h4>
+      <ol>
+        <li>Based on contenteditable</li>
+        <li>Insert images</li>
+        <li>Insert Headers, Bold, Italic, Underline, Ordered/Unordered Lists, Links, Text Colors</li>
+        <li>Content Annotations (<em>not included in this demo</em>)</li>
+        <li>Smart paste handling</li>
+        <li>Keyboard controls</li>
+      </ol>
+    </div>
+  </div>
+  {{paper-divider}}
+  <div class="row">
+    <div class="ten columns">
+        {{x-editor body=model.body buttons="bold,italic,underline,h1,h2,fontColor,link" uploadFiles="uploadFiles" register-as=editorInstance}}
+    </div>
+    <div class="two columns">
+      <a class="md-primary md-raised md-default-theme md-button" {{bind-attr href="exportHref"}} download="x_editor.html">Export</a>
+    </div>
+  </div>
+</div>

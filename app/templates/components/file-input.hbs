@@ -1,0 +1,26 @@
+{{#if drop}}
+  {{#drop-able action="drop"}}
+    <div class="inner">
+      Drag files on this card to upload<br>or
+      <a class="is-link btn-upload">
+        browse your computer
+        {{view fileInput viewName="input" component=controller}}
+      </a>
+    </div>
+  {{/drop-able}}
+{{else}}
+  <span {{bind-attr class=":btn :btn-upload type"}}>
+    {{label}}
+    {{view fileInput viewName="input" component=controller}}
+  </span>
+  &nbsp;
+  <span class="label label-info"></span>
+{{/if}}
+
+{{#unless hideList}}{{#if files.length}}
+  <ul class="nav">
+    {{#each file in files}}
+      <li>{{file.name}} <span class="link" {{action "remove" file}}>x</span></li>
+    {{/each}}
+  </ul>
+{{/if}}{{/unless}}

@@ -4,6 +4,7 @@
 Router = Ember.Router.extend(location: config.locationType)
 
 Router.map ->
+  @route 'xEditor', path: '/x-editor'
   @route 'selectBox', path: '/select-box'
 
 `export default Router`

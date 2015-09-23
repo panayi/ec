@@ -11,9 +11,13 @@
     {{/paper-toolbar}}
     {{#paper-content}}
       {{#paper-list}}
+        {{#paper-item action="transitionTo" param="xEditor"}}
+          {{paper-icon icon="mode-edit"}}
+          &#123;&#123;x-editor&#125;&#125;
+        {{/paper-item}}
         {{#paper-item action="transitionTo" param="selectBox"}}
           {{paper-icon icon="select-all"}}
-          Select Box
+          &#123;&#123;select-box&#125;&#125;
         {{/paper-item}}
       {{/paper-list}}
     {{/paper-content}}

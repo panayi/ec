@@ -1,0 +1,67 @@
+{{#drop-able action="dropFiles" viewName="dropAbleView"}}
+  {{#view elementsViewClass component=controller viewName="elementsView"}}
+    {{{unbound body}}}
+  {{/view}}
+{{/drop-able}}
+
+{{#view toolbarViewClass component=controller viewName="toolbarView"}}
+  <div {{bind-attr class=":editor-toolbar isToolbarVisible::hidden"}}>
+    <ul class="inline-styles">
+      {{#if isInsertingLink}}
+        <li>
+          {{focus-input value=link class="no-styling link-input" placeholder="Paste or type a link" onKeyDown="keyPressedInLinkInput"}}
+        </li>
+        <li>
+          <a href="#" class="close" {{action "endLinkInsert"}}></a>
+        </li>
+      {{else}}{{#if isSelectingColor}}
+        {{#each color in colors}}
+          <li class="square">
+            <a href="#" {{bind-attr style=color.style}} {{action "endSelectColor" color.value}}></a>
+          </li>
+        {{/each}}
+      {{else}}
+        {{#each buttonObject in view.buttonObjects}}
+          <li {{bind-attr class="buttonObject.isActive:active buttonObject.isVisible::hidden buttonObject.name"}}>
+            <a href="#" {{bind-attr title="buttonObject.name"}} {{action "buttonClicked" buttonObject target="view"}}>{{buttonObject.name}}</a>
+          </li>
+        {{/each}}
+      {{/if}}{{/if}}
+    </ul>
+    <div class="arrow-clip">
+      <span class="arrow"></span>
+    </div>
+    <span class="arrow-after"></span>
+  </div>
+{{/view}}
+
+{{#view addTagViewClass component=controller viewName="addTagView" class="popover-below popover-direction"}}
+  {{#pop-over isOpened=view.isOpened openOnHover=false viewName="popoverView"}}
+    {{#pop-over-toggle}}
+      <div class="link" style="padding: 0 10px;"><i class="fa fa-plus-circle"></i></div>
+    {{/pop-over-toggle}}
+    {{#pop-over-body}}
+      <ul>
+        {{#each tag in view.tags}}
+          <li>
+            <a href="#" {{bind-attr class="tag.isSelected"}} {{action "clickedTag" tag target="view"}}>
+              {{tag.label}}
+            </a>
+          </li>
+        {{/each}}
+      </ul>
+    {{/pop-over-body}}
+  {{/pop-over}}
+{{/view}}
+
+{{#view linkPopoverViewClass component=controller viewName="linkPopoverView"}}
+  {{#pop-over}}
+    {{#pop-over-body}}
+      <ul>
+        <li><a target="_blank" {{bind-attr href="view.anchor"}}>{{view.anchor}}</a></li>
+      </ul>
+    {{/pop-over-body}}
+  {{/pop-over}}
+{{/view}}
+
+{{file-input multiple=false onSelect="uploadFiles" param=controller.selectedAndEmptyElement isVisible=false viewName="uploaderView"}}

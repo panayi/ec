@@ -3,9 +3,6 @@
 defaultMatcher = (value, query) ->
   value.toLowerCase().indexOf(query.trim().toLowerCase()) is 0
 
-getArray = (context, key) ->
-  context.get(key) or []
-
 customSelectOptionView = Ember.View.extend
   classNameBindings: ['active', 'controller.selected']
   isVisible: Ember.computed.alias('controller.isVisible')
@@ -93,7 +90,7 @@ proxyController = Ember.Controller.extend
 
 keyResponderMixin = Ember.Mixin.create
   activeProxy: ( ->
-    proxies = getArray(this, 'proxies')
+    proxies = @getWithDefault('proxies', [])
     proxies.findBy('active')
   ).property('proxies.@each.active')
 

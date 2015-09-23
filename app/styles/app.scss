@@ -1,10 +1,15 @@
+@import "../../bower_components/font-awesome/scss/_variables.scss";
 @import "../../bower_components/skeleton/css/normalize";
 @import "../../bower_components/skeleton/css/skeleton";
 @import "../../bower_components/bourbon/dist/bourbon";
+@import "_neat_grid_settings";
+@import "../../bower_components/neat/app/assets/stylesheets/neat";
 @import 'ember-paper';
 @import 'variables';
 @import 'mixins';
+@import 'components/pop-over.scss';
 @import 'components/select-box.scss';
+@import 'components/x-editor.scss';
 
 
 .application, .site-nav-container, .container, .loading-container {
@@ -29,3 +34,28 @@ md-divider {
 .loading-container {
   position: relative;
 }
+
+.hidden {
+  display: none !important;
+}
+
+.muted {
+  opacity: 0.5;
+}
+
+input.no-styling {
+  resize: none;
+  outline: 0;
+  padding: 0;
+  margin: 0;
+  color: #000;
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  &:focus, &:active {
+    border: none;
+    box-shadow: none;
+  }
+}
+
